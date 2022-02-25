@@ -58,7 +58,8 @@ ssh mwa-solar "export DB_FILE={db_dir}/log.sqlite; python3 {db_dir}/db_update_lo
 ms=/astro/mwasci/asvo/{asvo}/{obsid}.ms
 
 # Copy model.txt file from Magnus
-scp hpc-data:/group/mwasci/jmorgan/qadb_models/{obsid}_model.txt ./
+#scp hpc-data:/group/mwasci/jmorgan/qadb_models/{obsid}_model.txt ./
+scp mwa-solar:{data_dir}/${obsid}/${obsid}_model.txt ./
 
 # Create stats file
 taql -m 100 "select ctod(TIME), gsum(ntrue(FLAG[,::3])), gmean(WEIGHT_SPECTRUM[,::3]), gsum(ntrue(amplitude(DATA[,::3])==0.0)) from $ms where ANTENNA1 != ANTENNA2 groupby TIME" > {obsid}_stats.txt
