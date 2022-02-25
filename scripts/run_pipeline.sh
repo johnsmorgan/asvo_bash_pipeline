@@ -1,23 +1,25 @@
-obsid=$1
-index=$2
+DB_dir=$1
+obsid=$2
+index=$3
 echo ${obsid}
 
 set -exE
 
 if [ -z "$obsid" ]; then
 	echo "ERROR Observation ID has not been passed correctly"
+elif [[ ${#obsid} -ne 10 ]]; then
+	echo "ERROR Observation ID is of incorrect length"
 else
 	# Set all database commands
-	DB_dir="/data/awaszewski/EoR_scin_pipeline/db/"
-	DB_FILE="${DB_dir}log.sqlite"
-	DB_add="${DB_dir}db_add_log.py"
-	DB_start="${DB_dir}db_start_log.py"
-	DB_view="${DB_dir}db_view_log.py"
-	DB_update="${DB_dir}db_update_log.py"
-	DB_end="${DB_dir}db_end_log.py"
+	DB_FILE="${DB_dir}/log.sqlite"
+	DB_add="${DB_dir}/db_add_log.py"
+	DB_start="${DB_dir}/db_start_log.py"
+	DB_view="${DB_dir}/db_view_log.py"
+	DB_update="${DB_dir}/db_update_log.py"
+	DB_end="${DB_dir}/db_end_log.py"
 
 	# Change to directory where data needs to be stored at the end of the pipeline
-	data_dir="/data/awaszewski/project/obsids_109/${obsid}/"
+	data_dir="/data/awaszewski/project/obsids_109/"
 	# Change to directory on Garrawarla where second half of pipeline will run
 	garra_dir="/astro/mwasci/awaszewski/EoR_scin_pipeline/"
 	# Change to directory where pipeline is being controlled from
@@ -30,7 +32,7 @@ else
 	match="${scripts}/match_g4jy.sh"
 
 	# Add current observation to database
-	python3 $DB_add -o ${obsid} -d ${data_dir}
+	python3 $DB_add -o ${obsid} -d ${data_dir}/${obsid}
 
 	# Submit job to ASVO, pipeline will wait until job is ready to be downloaded
 	if giant-squid submit-conv ${obsid} --wait -p conversion=ms,timeres=0.5,freqres=160,edgewidth=160 -d astro -e 2; then
@@ -44,7 +46,7 @@ else
 		python3 $DB_start -o ${obsid} -a ${asvojob}
 
 		# Start processing job on garrawarla
-		if ssh garrawarla "bash ${garra_dir}/start.sh ${obsid} ${asvojob}"; then
+		if ssh garrawarla "bash ${garra_dir}/start.sh ${obsid} ${asvojob} ${DB_dir} ${data_dir} ${garra_dir}"; then
 			echo ${obsid} ${index} >> ssh_succeed.txt
 			
 			# Continuously check database to see if observation has finished running
@@ -65,17 +67,17 @@ else
 				echo ${obsid} ${index} >> processing_failed.txt
 			else	
 				# Final clean up of /astro, including measurement set
-				scp hpc-data:${garra_dir}currently_running/${obsid}* $data_dir
-				ssh garrawarla "cd ${garra_dir}currently_running/; rm ${obsid}*; cd /astro/mwasci/asvo/${asvojob}/; rm ${obsid}.ms"
+				scp hpc-data:${garra_dir}/currently_running/${obsid}* $data_dir/${obsid}/
+				ssh garrawarla "cd ${garra_dir}/currently_running/; rm ${obsid}*; cd /astro/mwasci/asvo/${asvojob}/; rm ${obsid}.ms"
 			
 				# Moment images
-				bash $moment ${obsid}
+				bash $moment ${data_dir}/${obsid}
 
 				# Source finding
-				bash $vot ${obsid}
+				bash $vot ${data_dir}/${obsid}
 
 				# Cross-match with G4Jy survey
-				bash $match ${obsid}
+				bash $match ${data_dir}/${obsid}
 
 				echo ${obsid} ${index} >> processing_complete.txt
 			fi

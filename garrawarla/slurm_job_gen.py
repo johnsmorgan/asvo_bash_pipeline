@@ -9,18 +9,21 @@ parser.add_argument("-o", "--obsid", type=int, required=True,
 parser.add_argument("-c", "--cpus", type=int, required=False, default=38,
                                         help="Number of CPUs to be used")
 parser.add_argument("-a", "--asvo", type=int, required=True,
-										help="ASVO Job ID")
+					help="ASVO Job ID")
+parser.add_argument("--db_dir", type=str, required=True,
+                                        help="Directory where database is stored")
+parser.add_argument("--garra_dir", type=str, required=True,
+                                        help="Directory where pipeline is being run on Garrawarla")
+parser.add_argument("--data_dir", type=str, required=True,
+                                        help="Directory where processed data is being stored")
 args = parser.parse_args()
 
-# Change to directory where database is stored (DB_FILE)
-db_dir="/data/awaszewski/EoR_scin_pipeline/db/"
-# Change to directory where pipeline is being controlled from
-pipeline_dir="/astro/mwasci/awaszewski/EoR_scin_pipeline/"
-# Change to directory where processed data is stored
-data_dir="/data/awaszewski/project/obsids_109/"
+db_dir = args.db_dir
+garra_dir = args.garra_dir
+data_dir = args.data_dir
 
 obsnum = args.obsid
-filename = f"{pipeline_dir}/currently_running/{obsnum}-job.sh"
+filename = f"{garra_dir}/currently_running/{obsnum}-job.sh"
 f = open(filename,"w+")
 
 def gen_slurm(obsid, cpus, asvo):
@@ -30,14 +33,14 @@ def gen_slurm(obsid, cpus, asvo):
 #SBATCH --ntasks-per-node={cpus}
 #SBATCH --cpus-per-task=1
 #SBATCH --job-name={obsid}
-#SBATCH --output=/astro/mwasci/awaszewski/EoR_scin_pipeline/currently_running/{obsid}-pipeline.out
+#SBATCH --output={garra_dir}/currently_running/{obsid}-pipeline.out
 #SBATCH --time=01:00:00
 #SBATCH --partition=workq
 #SBATCH --account=mwasci
 
 set -exE
 
-trap 'ssh mwa-solar "export DB_FILE={db_dir}log.sqlite; python3 {db_dir}db_end_log.py -o {obsid} -s Failed"' ERR
+trap 'ssh mwa-solar "export DB_FILE={db_dir}/log.sqlite; python3 {db_dir}/db_end_log.py -o {obsid} -s Failed"' ERR
 
 # Move to the temporary working directory on the NVMe
 cd /nvmetmp
@@ -49,7 +52,7 @@ module load giant-squid wsclean mwa-reduce
 module load python aocalpy scipy astropy h5py
 
 # Update database to set observation to processing on garrawarla
-ssh mwa-solar "export DB_FILE={db_dir}log.sqlite; python3 {db_dir}db_update_log.py -o {obsid} -j $SLURM_JOB_ID"
+ssh mwa-solar "export DB_FILE={db_dir}/log.sqlite; python3 {db_dir}/db_update_log.py -o {obsid} -j $SLURM_JOB_ID"
 
 # Locate measurement set off of ASVO
 ms=/astro/mwasci/asvo/{asvo}/{obsid}.ms
@@ -64,7 +67,7 @@ taql -m 100 "select ctod(TIME), gsum(ntrue(FLAG[,::3])), gmean(WEIGHT_SPECTRUM[,
 calibrate -minuv 130 -maxuv 1300 -j {cpus} -t 1 -m {obsid}_model.txt $ms {obsid}_multi.bin
 
 # Find bad tiles
-scp hpc-data:{pipeline_dir}flagbadtiles.py ./
+scp hpc-data:{garra_dir}/flagbadtiles.py ./
 flagtiles=$(python3 ./flagbadtiles.py {obsid} $ms)
 
 # Flag bad tiles
@@ -97,23 +100,23 @@ intervals_out=$((interval_stop-interval_start))
 wsclean -j {cpus} -name {obsid} -subtract-model -pol xx,yy -size $size $size -join-polarizations -minuv-l $minuv_l -weight briggs 1.0 -nwlayers 18 -niter $niter -auto-mask $automask -auto-threshold $autothresh -scale $scale -log-time -no-reorder -no-update-model-required -interval $interval_start $interval_stop -intervals-out $intervals_out $ms
 
 # Make hdf5 file
-scp hpc-data:{pipeline_dir}hdf5/*.py ./
-scp mwa-solar:{data_dir}{obsid}/*.metafits ./
+scp hpc-data:{garra_dir}/hdf5/*.py ./
+scp mwa-solar:{data_dir}/{obsid}/*.metafits ./
 python3 ./make_imstack.py -n 50 --start=0 --step=1 --suffixes=image --outfile={obsid}.hdf5 --skip_beam --allow_missing {obsid}
-python3 ./lookup_beam_imstack.py {obsid}.hdf5 {obsid}.metafits 109-132 --beam_path {pipeline_dir}hdf5/gleam_xx_yy.hdf5
+python3 ./lookup_beam_imstack.py {obsid}.hdf5 {obsid}.metafits 109-132 --beam_path {garra_dir}/hdf5/gleam_xx_yy.hdf5
 python3 ./add_continuum.py {obsid}.hdf5 {obsid} image
 
 # Copy back any relevant data
-rsync -a *stats.txt mwa-solar:{data_dir}{obsid}/
-rsync -a *.bin mwa-solar:{data_dir}{obsid}/
-rsync -a *.hdf5 mwa-solar:{data_dir}{obsid}/
-rsync -a {obsid}-XX-image.fits mwa-solar:{data_dir}{obsid}/
-rsync -a {obsid}-YY-image.fits mwa-solar:{data_dir}{obsid}/
-rsync -a {obsid}-XX-model.fits mwa-solar:{data_dir}{obsid}/
-rsync -a {obsid}-YY-model.fits mwa-solar:{data_dir}{obsid}/
+rsync -a *stats.txt mwa-solar:{data_dir}/{obsid}/
+rsync -a *.bin mwa-solar:{data_dir}/{obsid}/
+rsync -a *.hdf5 mwa-solar:{data_dir}/{obsid}/
+rsync -a {obsid}-XX-image.fits mwa-solar:{data_dir}/{obsid}/
+rsync -a {obsid}-YY-image.fits mwa-solar:{data_dir}/{obsid}/
+rsync -a {obsid}-XX-model.fits mwa-solar:{data_dir}/{obsid}/
+rsync -a {obsid}-YY-model.fits mwa-solar:{data_dir}/{obsid}/
 
 # Update database to show that observation has finished processing
-ssh mwa-solar "export DB_FILE={db_dir}log.sqlite; python3 {db_dir}db_end_log.py -o {obsid} -s Completed" 
+ssh mwa-solar "export DB_FILE={db_dir}/log.sqlite; python3 {db_dir}/db_end_log.py -o {obsid} -s Completed" 
 
 # Clean up temp working directory
 rm -r *{obsid}*

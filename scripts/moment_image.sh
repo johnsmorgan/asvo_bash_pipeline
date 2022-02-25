@@ -1,18 +1,25 @@
 #!/bin/bash
 set -euox pipefail
 
-obsid=$1
+dir=$1
+
+# Get obsid from directory string
+IFS='/'
+read -a strarr <<< "$dir"
+obsid=${strarr[-1]}
 
 moment_image=/home/jmorgan/Working/imstack/imstack/moment_image.py
-# Change to directory where processed observations will be stored
-data_dir=/data/awaszewski/project/obsids_109
 
 # Creation of individual moment images along with the moment image cube
-echo ${obsid}
-if [ -d ${data_dir}/${obsid} ]; then
-	cd ${data_dir}/${obsid}
-	mpirun -n 8 --oversubscribe --timestamp-output python ${moment_image} ${obsid}.hdf5 \
-		--filter_lo --filter_hi --suffix=image
+if [[ ${#obsid} -ne 10 ]]; then
+	echo ERROR Observation ID incorrect
 else
-	echo ${obsid} does not exist
+	echo ${obsid}
+	if [ -d ${dir} ]; then
+		cd ${dir}
+		mpirun -n 8 --oversubscribe --timestamp-output python ${moment_image} ${obsid}.hdf5 \
+			--filter_lo --filter_hi --suffix=image
+	else
+		echo ERROR Data directory does not exist
+	fi
 fi

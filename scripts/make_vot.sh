@@ -2,13 +2,24 @@
 
 set -euxo pipefail
 
-obsid=$1
-# Change to directory where processed observations will be stored
-data_dir=/data/awaszewski/project/obsids_109
+dir=$1
 
-# Move to directory where processed data is stored
-cd $data_dir/$obsid
-	
-# Run source finding 
-BANE ${obsid}-XX-image.fits
-aegean --autoload ${obsid}-XX-image.fits --table ${obsid}_out.vot
+# Get obsid from directory string
+IFS='/'
+read -a strarr <<< "$dir"
+obsid=${strarr[-1]}
+
+# Move into data directory
+if [[ ${#obsid} -ne 10 ]]; then
+	echo ERROR Observation ID is incorrect
+else
+	if [ -d ${dir} ]; then
+		cd $dir
+
+		# Run source finding 
+		BANE ${obsid}-XX-image.fits
+		aegean --autoload ${obsid}-XX-image.fits --table ${obsid}_out.vot
+	else
+		echo ERROR Data directory does not exist
+	fi
+fi
