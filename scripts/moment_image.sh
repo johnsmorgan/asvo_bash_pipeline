@@ -4,6 +4,7 @@ set -euox pipefail
 obsid=$1
 
 moment_image=/home/jmorgan/Working/imstack/imstack/moment_image.py
+# Change to directory where processed observations will be stored
 data_dir=/data/awaszewski/project/obsids_109
 
 # Creation of individual moment images along with the moment image cube

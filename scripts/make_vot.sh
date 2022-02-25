@@ -3,6 +3,7 @@
 set -euxo pipefail
 
 obsid=$1
+# Change to directory where processed observations will be stored
 data_dir=/data/awaszewski/project/obsids_109
 
 # Move to directory where processed data is stored

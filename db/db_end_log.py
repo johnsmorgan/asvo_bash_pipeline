@@ -29,7 +29,9 @@ with con:
     if opts.status == "Failed":
         cur.execute("UPDATE Log SET Ended=?, Status=? WHERE Obsid=?", (end_time, opts.status, obsid))
     else:
-        cur.execute("SELECT Started FROM Log WHERE Obsid=?", (obsid))
+        query = "SELECT Started FROM Log WHERE Obsid=%d" % (obsid)
+        #cur.execute("SELECT Started FROM Log WHERE Obsid=?", (opts.obsid))
+        cur.execute(query)
         start_time = cur.fetchone()[0]
         start_time = datetime.strptime(start_time, '%Y-%m-%d %H:%M:%S.%f')
         time_diff = end_time - start_time

@@ -1,0 +1,1118 @@
+<?xml version='1.0'?>
+<VOTABLE version="1.4"
+ xmlns="http://www.ivoa.net/xml/VOTable/v1.3">
+<!--
+ !  VOTable written by STIL version 3.4 (uk.ac.starlink.votable.VOTableWriter)
+ !  at 2021-04-27T07:44:18
+ !-->
+<RESOURCE>
+<TABLE name="Joined" nrows="55">
+<PARAM arraysize="19" datatype="char" name="DATE-HDU" value="2018-05-11T03:13:33"/>
+<PARAM arraysize="5" datatype="char" name="STILVERS" value="3.2-2"/>
+<PARAM arraysize="42" datatype="char" name="STILCLAS" value="uk.ac.starlink.votable.FitsPlusTableWriter"/>
+<PARAM arraysize="43" datatype="char" name="Match type" value="Pair match; Best match for each Table 1 row">
+<DESCRIPTION>Type of match which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="3" datatype="char" name="Match algorithm" value="Sky">
+<DESCRIPTION>Matching algorithm which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="89" datatype="char" name="Join Type" value="All from 1 (An output row for each matched or unmatched row in table 1 (LEFT OUTER JOIN))">
+<DESCRIPTION>Determines which rows appear in output table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="12" datatype="char" name="First input table" value="2: g4jy.fits"/>
+<PARAM arraysize="29" datatype="char" name="Second input table" value="1: dr2_classified_average.vot"/>
+<FIELD arraysize="9" datatype="char" name="G4Jy_name" ucd="meta.id.parent;src">
+<DESCRIPTION>Name of source belonging to the G4Jy Sample</DESCRIPTION>
+</FIELD>
+<FIELD arraysize="20" datatype="char" name="GLEAM_name" ucd="meta.id">
+<DESCRIPTION>Name of the GLEAM component</DESCRIPTION>
+</FIELD>
+<FIELD datatype="short" name="ncmp_GLEAM" ucd="meta.number;em.radio.170-231MHz">
+<DESCRIPTION>Number of GLEAM components for this G4Jy source</DESCRIPTION>
+</FIELD>
+<FIELD datatype="double" name="centroid_RAJ2000" ucd="pos.eq.ra;meta.main;em.radio.750-1500MHz" unit="deg">
+<DESCRIPTION>Right ascension for the centroid position (J2000)</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="err_centroid_RAJ2000" ucd="stat.error;pos.eq.ra;em.radio.750-1500MHz" unit="arcsec">
+<DESCRIPTION>Error on RA for the centroid position</DESCRIPTION>
+</FIELD>
+<FIELD datatype="double" name="centroid_DEJ2000" ucd="pos.eq.dec;meta.main;em.radio.750-1500MHz" unit="deg">
+<DESCRIPTION>Declination for the centroid position (J2000)</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="err_centroid_DEJ2000" ucd="stat.error;pos.eq.dec;em.radio.750-1500MHz" unit="arcsec">
+<DESCRIPTION>Error on Dec for the centroid position</DESCRIPTION>
+</FIELD>
+<FIELD arraysize="7" datatype="char" name="morphology" ucd="src.morph">
+<DESCRIPTION>Morphology of the source in NVSS/SUMSS/TGSS</DESCRIPTION>
+</FIELD>
+<FIELD datatype="short" name="ncmp_NVSSorSUMSS" ucd="meta.number;em.radio.750-1500MHz">
+<DESCRIPTION>Number of NVSS/SUMSS components</DESCRIPTION>
+</FIELD>
+<FIELD datatype="short" name="confusion_flag" ucd="meta.code.qual;em.radio.750-1500MHz">
+<DESCRIPTION>Flag for sources affected by confusion in GLEAM</DESCRIPTION>
+</FIELD>
+<FIELD arraysize="1" datatype="char" name="angular_size_limit" ucd="meta.code.error;em.radio.750-1500MHz">
+<DESCRIPTION>Indicates that the angular size is an upper limit</DESCRIPTION>
+</FIELD>
+<FIELD datatype="float" name="angular_size" ucd="phys.angSize;em.radio.750-1500MHz" unit="arcsec">
+<DESCRIPTION>Angular size in NVSS/SUMSS</DESCRIPTION>
+</FIELD>
+<FIELD ID="nsi" datatype="double" name="nsi"/>
+<FIELD ID="err_nsi" datatype="double" name="err_nsi"/>
+<FIELD ID="spread_nsi" datatype="double" name="spread_nsi"/>
+<FIELD ID="n_obs" datatype="double" name="n_obs_nsi"/>
+<FIELD datatype="double" name="ips_tgss_sep" ucd="pos.angDistance" unit="arcsec">
+<DESCRIPTION>Distance between matched objects along a great circle</DESCRIPTION>
+</FIELD>
+<DATA>
+<TABLEDATA>
+  <TR>
+    <TD>G4Jy 2</TD>
+    <TD>GLEAM J000105-165921</TD>
+    <TD>1</TD>
+    <TD>0.27283</TD>
+    <TD>0.43</TD>
+    <TD>-16.99025</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>&lt;</TD>
+    <TD>39.8</TD>
+    <TD>0.17873560057488197</TD>
+    <TD>0.010869344654262921</TD>
+    <TD>0.07055931267584024</TD>
+    <TD>5.0</TD>
+    <TD>1.5952646191768263</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 3</TD>
+    <TD>GLEAM J000312-355630</TD>
+    <TD>1</TD>
+    <TD>0.80309</TD>
+    <TD>0.52</TD>
+    <TD>-35.938937</TD>
+    <TD>0.63</TD>
+    <TD>triple</TD>
+    <TD>3</TD>
+    <TD>0</TD>
+    <TD>¿</TD>
+    <TD>115.728</TD>
+    <TD>0.35457173063436587</TD>
+    <TD>0.02000525138447551</TD>
+    <TD>0.14675893990503847</TD>
+    <TD>3.0</TD>
+    <TD>21.985624837678646</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 4</TD>
+    <TD>GLEAM J000322-172708</TD>
+    <TD>1</TD>
+    <TD>0.84167</TD>
+    <TD>0.43</TD>
+    <TD>-17.45317</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>1</TD>
+    <TD>&lt;</TD>
+    <TD>15.6</TD>
+    <TD>0.398408034981588</TD>
+    <TD>0.0071092561642302115</TD>
+    <TD>0.10804734712980162</TD>
+    <TD>11.0</TD>
+    <TD>0.6860179132409384</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 6</TD>
+    <TD>GLEAM J000355-305949</TD>
+    <TD>1</TD>
+    <TD>0.97954</TD>
+    <TD>0.51</TD>
+    <TD>-30.99792</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>¿</TD>
+    <TD>15.0</TD>
+    <TD>0.7436622164631421</TD>
+    <TD>0.014897756395723034</TD>
+    <TD>0.22564273471288257</TD>
+    <TD>26.0</TD>
+    <TD>0.9363153582200275</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 21</TD>
+    <TD>GLEAM J001218-332157</TD>
+    <TD>1</TD>
+    <TD>3.07483</TD>
+    <TD>0.5</TD>
+    <TD>-33.36606</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>&lt;</TD>
+    <TD>19.0</TD>
+    <TD>0.37665749967101414</TD>
+    <TD>0.009446841161164834</TD>
+    <TD>0.17358352361965107</TD>
+    <TD>24.0</TD>
+    <TD>1.9964269926158937</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 26</TD>
+    <TD>GLEAM J001524-380439</TD>
+    <TD>1</TD>
+    <TD>3.851181</TD>
+    <TD>0.47</TD>
+    <TD>-38.076493</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>2</TD>
+    <TD>0</TD>
+    <TD>¿</TD>
+    <TD>50.255</TD>
+    <TD>0.4152268792052296</TD>
+    <TD>0.006442802082442448</TD>
+    <TD>0.17189933671110388</TD>
+    <TD>24.0</TD>
+    <TD>1.292934598343327</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 28</TD>
+    <TD>GLEAM J001619-143009</TD>
+    <TD>1</TD>
+    <TD>4.082584</TD>
+    <TD>0.44</TD>
+    <TD>-14.503296</TD>
+    <TD>0.6</TD>
+    <TD>double</TD>
+    <TD>2</TD>
+    <TD>0</TD>
+    <TD>¿</TD>
+    <TD>47.553</TD>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>NaN</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 29</TD>
+    <TD>GLEAM J001636-382643</TD>
+    <TD>1</TD>
+    <TD>4.153337</TD>
+    <TD>0.47</TD>
+    <TD>-38.446629</TD>
+    <TD>0.6</TD>
+    <TD>double</TD>
+    <TD>2</TD>
+    <TD>0</TD>
+    <TD>¿</TD>
+    <TD>140.538</TD>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>NaN</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 30</TD>
+    <TD>GLEAM J001707-125625</TD>
+    <TD>1</TD>
+    <TD>4.28346</TD>
+    <TD>0.44</TD>
+    <TD>-12.94025</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>1</TD>
+    <TD>&lt;</TD>
+    <TD>17.1</TD>
+    <TD>0.7723249717385903</TD>
+    <TD>0.04085413063193261</TD>
+    <TD>0.2601873715462828</TD>
+    <TD>16.0</TD>
+    <TD>0.2615332765817139</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 33</TD>
+    <TD>GLEAM J001851-124235</TD>
+    <TD>1</TD>
+    <TD>4.71408</TD>
+    <TD>0.44</TD>
+    <TD>-12.70931</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>&lt;</TD>
+    <TD>17.3</TD>
+    <TD>0.4427414552604099</TD>
+    <TD>0.015071433954136354</TD>
+    <TD>0.1678371305277969</TD>
+    <TD>15.0</TD>
+    <TD>0.43106755378335043</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 40</TD>
+    <TD>GLEAM J002112-191041</TD>
+    <TD>1</TD>
+    <TD>5.303144</TD>
+    <TD>0.49</TD>
+    <TD>-19.178132</TD>
+    <TD>0.64</TD>
+    <TD>double</TD>
+    <TD>2</TD>
+    <TD>1</TD>
+    <TD>¿</TD>
+    <TD>58.019</TD>
+    <TD>0.2031004801033765</TD>
+    <TD>0.01270282871136061</TD>
+    <TD>0.013890257399395894</TD>
+    <TD>2.0</TD>
+    <TD>154.5491918565332</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 43</TD>
+    <TD>GLEAM J002308-250232</TD>
+    <TD>1</TD>
+    <TD>5.788921</TD>
+    <TD>0.41</TD>
+    <TD>-25.043156</TD>
+    <TD>0.6</TD>
+    <TD>double</TD>
+    <TD>2</TD>
+    <TD>1</TD>
+    <TD>¿</TD>
+    <TD>60.977</TD>
+    <TD>0.17841242197279447</TD>
+    <TD>0.00923907108950716</TD>
+    <TD>0.12061244662206537</TD>
+    <TD>4.0</TD>
+    <TD>2.499430751651315</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 45</TD>
+    <TD>GLEAM J002430-292847</TD>
+    <TD>1</TD>
+    <TD>6.1255</TD>
+    <TD>0.39</TD>
+    <TD>-29.48025</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>&lt;</TD>
+    <TD>42.0</TD>
+    <TD>0.1315126411976708</TD>
+    <TD>0.00686797074119717</TD>
+    <TD>0.16072438346831913</TD>
+    <TD>11.0</TD>
+    <TD>0.7162359564481049</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 47</TD>
+    <TD>GLEAM J002530-330336</TD>
+    <TD>1</TD>
+    <TD>6.37856</TD>
+    <TD>0.5</TD>
+    <TD>-33.055309</TD>
+    <TD>0.6</TD>
+    <TD>double</TD>
+    <TD>2</TD>
+    <TD>0</TD>
+    <TD>¿</TD>
+    <TD>93.142</TD>
+    <TD>0.8735272515093446</TD>
+    <TD>0.08043969801439281</TD>
+    <TD>NaN</TD>
+    <TD>1.0</TD>
+    <TD>28.011627853304663</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 48</TD>
+    <TD>GLEAM J002549-260211</TD>
+    <TD>1</TD>
+    <TD>6.45487</TD>
+    <TD>0.4</TD>
+    <TD>-26.03689</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>&lt;</TD>
+    <TD>17.8</TD>
+    <TD>1.0840782657745487</TD>
+    <TD>0.01885691570116057</TD>
+    <TD>0.34164566943889385</TD>
+    <TD>29.0</TD>
+    <TD>2.1238180003303087</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 49</TD>
+    <TD>GLEAM J002609-124749</TD>
+    <TD>1</TD>
+    <TD>6.539</TD>
+    <TD>0.44</TD>
+    <TD>-12.79697</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>&lt;</TD>
+    <TD>17.5</TD>
+    <TD>0.7435838752988108</TD>
+    <TD>0.058083624020072375</TD>
+    <TD>0.25482074371006813</TD>
+    <TD>10.0</TD>
+    <TD>0.2519563774006779</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 50</TD>
+    <TD>GLEAM J002613-200455</TD>
+    <TD>1</TD>
+    <TD>6.55825</TD>
+    <TD>0.42</TD>
+    <TD>-20.08269</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>¿</TD>
+    <TD>18.6</TD>
+    <TD>0.21335119954456838</TD>
+    <TD>0.009789584128651819</TD>
+    <TD>0.058513447737573374</TD>
+    <TD>5.0</TD>
+    <TD>1.0844535273172855</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 51</TD>
+    <TD>GLEAM J002654-365535</TD>
+    <TD>1</TD>
+    <TD>6.72875</TD>
+    <TD>0.48</TD>
+    <TD>-36.92547</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>¿</TD>
+    <TD>18.6</TD>
+    <TD>0.7103005032619853</TD>
+    <TD>0.022088530946444324</TD>
+    <TD>0.23932475874820527</TD>
+    <TD>19.0</TD>
+    <TD>1.799998145370595</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 64</TD>
+    <TD>GLEAM J003508-200354</TD>
+    <TD>1</TD>
+    <TD>8.78667</TD>
+    <TD>0.42</TD>
+    <TD>-20.06644</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>&lt;</TD>
+    <TD>18.6</TD>
+    <TD>0.6907349666457456</TD>
+    <TD>0.023760569405878663</TD>
+    <TD>0.15047633751201417</TD>
+    <TD>15.0</TD>
+    <TD>1.6623645887411325</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 66</TD>
+    <TD>GLEAM J003629-372745</TD>
+    <TD>1</TD>
+    <TD>9.12267</TD>
+    <TD>0.48</TD>
+    <TD>-37.46061</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>¿</TD>
+    <TD>25.3</TD>
+    <TD>0.3516901277672964</TD>
+    <TD>0.014134844860810743</TD>
+    <TD>NaN</TD>
+    <TD>1.0</TD>
+    <TD>6.249539725685566</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 80</TD>
+    <TD>GLEAM J004354-160447</TD>
+    <TD>1</TD>
+    <TD>10.97696</TD>
+    <TD>0.43</TD>
+    <TD>-16.08083</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>&lt;</TD>
+    <TD>17.3</TD>
+    <TD>0.44279332761673645</TD>
+    <TD>0.018357024371892457</TD>
+    <TD>0.12915085660663794</TD>
+    <TD>3.0</TD>
+    <TD>0.5220146944699895</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 81</TD>
+    <TD>GLEAM J004411-221219</TD>
+    <TD>1</TD>
+    <TD>11.04704</TD>
+    <TD>0.42</TD>
+    <TD>-22.20775</TD>
+    <TD>0.6</TD>
+    <TD>double</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>¿</TD>
+    <TD>62.4</TD>
+    <TD>0.34904893412384913</TD>
+    <TD>0.018910245328457916</TD>
+    <TD>0.06498302301840189</TD>
+    <TD>6.0</TD>
+    <TD>1.2203557470821114</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 82</TD>
+    <TD>GLEAM J004441-353029</TD>
+    <TD>1</TD>
+    <TD>11.17279</TD>
+    <TD>0.49</TD>
+    <TD>-35.50911</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>1</TD>
+    <TD>&lt;</TD>
+    <TD>15.7</TD>
+    <TD>0.509548937240952</TD>
+    <TD>0.018757268058277637</TD>
+    <TD>0.12475176638773308</TD>
+    <TD>13.0</TD>
+    <TD>5.691486080426591</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 86</TD>
+    <TD>GLEAM J004733-251710</TD>
+    <TD>1</TD>
+    <TD>11.89024</TD>
+    <TD>0.54</TD>
+    <TD>-25.28538</TD>
+    <TD>0.68</TD>
+    <TD>complex</TD>
+    <TD>8</TD>
+    <TD>1</TD>
+    <TD>¿</TD>
+    <TD>996.311</TD>
+    <TD>0.37043084745920635</TD>
+    <TD>0.02510440049423146</TD>
+    <TD>NaN</TD>
+    <TD>1.0</TD>
+    <TD>161.66872910277587</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 106</TD>
+    <TD>GLEAM J005827-240101</TD>
+    <TD>1</TD>
+    <TD>14.615591</TD>
+    <TD>0.41</TD>
+    <TD>-24.01732</TD>
+    <TD>0.6</TD>
+    <TD>double</TD>
+    <TD>2</TD>
+    <TD>1</TD>
+    <TD>¿</TD>
+    <TD>61.899</TD>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>NaN</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 113</TD>
+    <TD>GLEAM J010241-215227</TD>
+    <TD>1</TD>
+    <TD>15.673822</TD>
+    <TD>0.47</TD>
+    <TD>-21.879797</TD>
+    <TD>0.65</TD>
+    <TD>complex</TD>
+    <TD>2</TD>
+    <TD>1</TD>
+    <TD>¿</TD>
+    <TD>119.465</TD>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>NaN</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 114</TD>
+    <TD>GLEAM J010244-273124</TD>
+    <TD>1</TD>
+    <TD>15.684058</TD>
+    <TD>0.4</TD>
+    <TD>-27.524797</TD>
+    <TD>0.6</TD>
+    <TD>double</TD>
+    <TD>2</TD>
+    <TD>0</TD>
+    <TD>¿</TD>
+    <TD>57.417</TD>
+    <TD>0.266952074459059</TD>
+    <TD>0.008978463191967937</TD>
+    <TD>0.008652954631919313</TD>
+    <TD>2.0</TD>
+    <TD>1.033407612438574</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1805</TD>
+    <TD>GLEAM J230455-343129</TD>
+    <TD>1</TD>
+    <TD>346.231666</TD>
+    <TD>0.49</TD>
+    <TD>-34.52505</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>2</TD>
+    <TD>1</TD>
+    <TD>¿</TD>
+    <TD>53.082</TD>
+    <TD>0.3163346076465706</TD>
+    <TD>0.005568940455555204</TD>
+    <TD>0.06454621523369979</TD>
+    <TD>26.0</TD>
+    <TD>0.4714058250258956</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1807</TD>
+    <TD>GLEAM J230627-250653</TD>
+    <TD>1</TD>
+    <TD>346.61267</TD>
+    <TD>0.41</TD>
+    <TD>-25.11514</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>&lt;</TD>
+    <TD>19.3</TD>
+    <TD>0.20719467453900905</TD>
+    <TD>0.0077365655370925735</TD>
+    <TD>0.04238992228677318</TD>
+    <TD>25.0</TD>
+    <TD>1.3004962759313772</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1810</TD>
+    <TD>GLEAM J231007-275752</TD>
+    <TD>1</TD>
+    <TD>347.53083</TD>
+    <TD>0.4</TD>
+    <TD>-27.96433</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>&lt;</TD>
+    <TD>46.2</TD>
+    <TD>0.0936119111843865</TD>
+    <TD>0.004396475629165721</TD>
+    <TD>0.055548282965914415</TD>
+    <TD>20.0</TD>
+    <TD>3.138144426227305</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1815</TD>
+    <TD>GLEAM J231635-162543</TD>
+    <TD>1</TD>
+    <TD>349.14512</TD>
+    <TD>0.43</TD>
+    <TD>-16.42942</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>&lt;</TD>
+    <TD>45.0</TD>
+    <TD>0.40835804656745134</TD>
+    <TD>0.0066575934891419854</TD>
+    <TD>0.1318622837034076</TD>
+    <TD>15.0</TD>
+    <TD>0.5558369166960175</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1818</TD>
+    <TD>GLEAM J231949-220416</TD>
+    <TD>1</TD>
+    <TD>349.9555</TD>
+    <TD>0.42</TD>
+    <TD>-22.06469</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>1</TD>
+    <TD>&lt;</TD>
+    <TD>17.5</TD>
+    <TD>0.15644308248702787</TD>
+    <TD>0.002706383795667942</TD>
+    <TD>0.0781293868828229</TD>
+    <TD>8.0</TD>
+    <TD>138.86034487646847</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1819</TD>
+    <TD>GLEAM J231956-272735</TD>
+    <TD>1</TD>
+    <TD>349.984624</TD>
+    <TD>0.4</TD>
+    <TD>-27.467143</TD>
+    <TD>0.6</TD>
+    <TD>double</TD>
+    <TD>2</TD>
+    <TD>0</TD>
+    <TD>¿</TD>
+    <TD>167.767</TD>
+    <TD>0.14773464391683283</TD>
+    <TD>0.0057281898947660476</TD>
+    <TD>0.152553586079548</TD>
+    <TD>7.0</TD>
+    <TD>1.7402958323679265</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1820</TD>
+    <TD>GLEAM J232036-335325</TD>
+    <TD>1</TD>
+    <TD>350.152886</TD>
+    <TD>0.5</TD>
+    <TD>-33.892186</TD>
+    <TD>0.6</TD>
+    <TD>double</TD>
+    <TD>2</TD>
+    <TD>1</TD>
+    <TD>¿</TD>
+    <TD>88.799</TD>
+    <TD>0.224188100054461</TD>
+    <TD>0.011601967253558887</TD>
+    <TD>0.11874837816740648</TD>
+    <TD>3.0</TD>
+    <TD>44.070877402882914</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1821</TD>
+    <TD>GLEAM J232049-191917</TD>
+    <TD>1</TD>
+    <TD>350.20708</TD>
+    <TD>0.42</TD>
+    <TD>-19.32225</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>1</TD>
+    <TD>&lt;</TD>
+    <TD>19.9</TD>
+    <TD>0.8659984102327678</TD>
+    <TD>0.016530195821787802</TD>
+    <TD>0.2187238514352121</TD>
+    <TD>16.0</TD>
+    <TD>1.661414645241498</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1822</TD>
+    <TD>GLEAM J232102-162302</TD>
+    <TD>1</TD>
+    <TD>350.25837</TD>
+    <TD>0.43</TD>
+    <TD>-16.38478</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>&lt;</TD>
+    <TD>19.8</TD>
+    <TD>1.2352063540031248</TD>
+    <TD>0.007155683094231072</TD>
+    <TD>0.38007031885052783</TD>
+    <TD>19.0</TD>
+    <TD>0.8525009891094052</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1823</TD>
+    <TD>GLEAM J232103-241043</TD>
+    <TD>1</TD>
+    <TD>350.26483</TD>
+    <TD>0.41</TD>
+    <TD>-24.17822</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>&lt;</TD>
+    <TD>26.5</TD>
+    <TD>0.3480054339278702</TD>
+    <TD>0.014989359716136682</TD>
+    <TD>0.11234620906987547</TD>
+    <TD>26.0</TD>
+    <TD>2.021420768466293</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1825</TD>
+    <TD>GLEAM J232447-271916</TD>
+    <TD>1</TD>
+    <TD>351.19717</TD>
+    <TD>0.4</TD>
+    <TD>-27.32206</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>&lt;</TD>
+    <TD>14.1</TD>
+    <TD>0.9967382117783462</TD>
+    <TD>0.012644391951656656</TD>
+    <TD>0.21180721910597095</TD>
+    <TD>26.0</TD>
+    <TD>0.3311888051540868</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1833</TD>
+    <TD>GLEAM J232831-145415</TD>
+    <TD>1</TD>
+    <TD>352.13155</TD>
+    <TD>0.43</TD>
+    <TD>-14.904432</TD>
+    <TD>0.6</TD>
+    <TD>double</TD>
+    <TD>2</TD>
+    <TD>0</TD>
+    <TD>¿</TD>
+    <TD>65.074</TD>
+    <TD>0.2289658812478602</TD>
+    <TD>0.005552943448543311</TD>
+    <TD>0.09213703854333906</TD>
+    <TD>12.0</TD>
+    <TD>4.284646834321446</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1834</TD>
+    <TD>GLEAM J232834-210542</TD>
+    <TD>1</TD>
+    <TD>352.147532</TD>
+    <TD>0.42</TD>
+    <TD>-21.097756</TD>
+    <TD>0.6</TD>
+    <TD>double</TD>
+    <TD>2</TD>
+    <TD>0</TD>
+    <TD>¿</TD>
+    <TD>61.635</TD>
+    <TD>0.07614245064572268</TD>
+    <TD>0.00456426728664268</TD>
+    <TD>NaN</TD>
+    <TD>1.0</TD>
+    <TD>27.005570482640042</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1835</TD>
+    <TD>GLEAM J232933-192257</TD>
+    <TD>1</TD>
+    <TD>352.39058</TD>
+    <TD>0.42</TD>
+    <TD>-19.38475</TD>
+    <TD>0.6</TD>
+    <TD>double</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>&lt;</TD>
+    <TD>71.2</TD>
+    <TD>0.08641266107462692</TD>
+    <TD>0.00294574248173096</TD>
+    <TD>0.019783589045</TD>
+    <TD>6.0</TD>
+    <TD>1.6684668995829721</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1836</TD>
+    <TD>GLEAM J233003-180803</TD>
+    <TD>1</TD>
+    <TD>352.51362</TD>
+    <TD>0.43</TD>
+    <TD>-18.13428</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>&lt;</TD>
+    <TD>15.3</TD>
+    <TD>0.2827141030314655</TD>
+    <TD>0.006786023323652215</TD>
+    <TD>0.12776068996312204</TD>
+    <TD>13.0</TD>
+    <TD>0.5145403840758784</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1837</TD>
+    <TD>GLEAM J233147-245210</TD>
+    <TD>1</TD>
+    <TD>352.94671</TD>
+    <TD>0.41</TD>
+    <TD>-24.86942</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>&lt;</TD>
+    <TD>17.9</TD>
+    <TD>0.1692879662925238</TD>
+    <TD>0.011085457614191397</TD>
+    <TD>0.04123293378691224</TD>
+    <TD>20.0</TD>
+    <TD>0.9759810993444463</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1839</TD>
+    <TD>GLEAM J233343-305753</TD>
+    <TD>1</TD>
+    <TD>353.43062</TD>
+    <TD>0.51</TD>
+    <TD>-30.9655</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>&lt;</TD>
+    <TD>16.2</TD>
+    <TD>1.051008132905553</TD>
+    <TD>0.010034524485265983</TD>
+    <TD>0.23440610205775103</TD>
+    <TD>26.0</TD>
+    <TD>0.646361117205772</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1841</TD>
+    <TD>GLEAM J233429-334502</TD>
+    <TD>1</TD>
+    <TD>353.622525</TD>
+    <TD>0.5</TD>
+    <TD>-33.750686</TD>
+    <TD>0.6</TD>
+    <TD>double</TD>
+    <TD>2</TD>
+    <TD>0</TD>
+    <TD>¿</TD>
+    <TD>51.853</TD>
+    <TD>0.15226575255377453</TD>
+    <TD>0.0064749745028112905</TD>
+    <TD>0.06933758866723894</TD>
+    <TD>21.0</TD>
+    <TD>24.152200322015414</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1844</TD>
+    <TD>GLEAM J233648-344403</TD>
+    <TD>1</TD>
+    <TD>354.20121</TD>
+    <TD>0.49</TD>
+    <TD>-34.73536</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>&lt;</TD>
+    <TD>44.9</TD>
+    <TD>0.13421271399619367</TD>
+    <TD>0.0026015294418216335</TD>
+    <TD>0.08182000037540889</TD>
+    <TD>21.0</TD>
+    <TD>1.8901805312084161</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1846</TD>
+    <TD>GLEAM J234112-162052</TD>
+    <TD>1</TD>
+    <TD>355.30387</TD>
+    <TD>0.43</TD>
+    <TD>-16.34858</TD>
+    <TD>0.6</TD>
+    <TD>complex</TD>
+    <TD>1</TD>
+    <TD>1</TD>
+    <TD>&lt;</TD>
+    <TD>30.7</TD>
+    <TD>0.31419383968424974</TD>
+    <TD>0.004533034589491318</TD>
+    <TD>0.10922956170669433</TD>
+    <TD>13.0</TD>
+    <TD>3.6455917746351063</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1848</TD>
+    <TD>GLEAM J234146-350620</TD>
+    <TD>1</TD>
+    <TD>355.44092</TD>
+    <TD>0.49</TD>
+    <TD>-35.10689</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>¿</TD>
+    <TD>19.1</TD>
+    <TD>0.857597395279416</TD>
+    <TD>0.0055473968717623095</TD>
+    <TD>0.2851356341828748</TD>
+    <TD>26.0</TD>
+    <TD>1.7714495829033723</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1849</TD>
+    <TD>GLEAM J234324-214129</TD>
+    <TD>1</TD>
+    <TD>355.85062</TD>
+    <TD>0.42</TD>
+    <TD>-21.69294</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>&lt;</TD>
+    <TD>32.6</TD>
+    <TD>0.07825685042140149</TD>
+    <TD>0.0060621194503181685</TD>
+    <TD>0.025578039337579593</TD>
+    <TD>5.0</TD>
+    <TD>1.4439071079626398</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1850</TD>
+    <TD>GLEAM J234545-240232</TD>
+    <TD>1</TD>
+    <TD>356.43979</TD>
+    <TD>0.41</TD>
+    <TD>-24.04058</TD>
+    <TD>0.6</TD>
+    <TD>double</TD>
+    <TD>1</TD>
+    <TD>1</TD>
+    <TD>&lt;</TD>
+    <TD>57.6</TD>
+    <TD>0.12435775482089065</TD>
+    <TD>0.006683083175147596</TD>
+    <TD>0.026741393181375844</TD>
+    <TD>6.0</TD>
+    <TD>3.0989871974839764</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1852</TD>
+    <TD>GLEAM J234740-280839</TD>
+    <TD>1</TD>
+    <TD>356.925218</TD>
+    <TD>1.25</TD>
+    <TD>-28.145209</TD>
+    <TD>1.71</TD>
+    <TD>double</TD>
+    <TD>3</TD>
+    <TD>0</TD>
+    <TD>¿</TD>
+    <TD>116.782</TD>
+    <TD>0.31483914988736017</TD>
+    <TD>0.012368199803386404</TD>
+    <TD>NaN</TD>
+    <TD>1.0</TD>
+    <TD>19.6659715182716</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1854</TD>
+    <TD>GLEAM J235050-245702</TD>
+    <TD>1</TD>
+    <TD>357.70925</TD>
+    <TD>0.41</TD>
+    <TD>-24.95</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>1</TD>
+    <TD>&lt;</TD>
+    <TD>43.6</TD>
+    <TD>0.14832207446668275</TD>
+    <TD>0.008666577663011578</TD>
+    <TD>0.10344859300006697</TD>
+    <TD>15.0</TD>
+    <TD>2.361004825504705</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1855</TD>
+    <TD>GLEAM J235134-160739</TD>
+    <TD>1</TD>
+    <TD>357.89292</TD>
+    <TD>0.43</TD>
+    <TD>-16.12797</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>¿</TD>
+    <TD>28.5</TD>
+    <TD>0.3189222378118306</TD>
+    <TD>0.01078647986656757</TD>
+    <TD>0.10314029517455912</TD>
+    <TD>11.0</TD>
+    <TD>1.1019025421110438</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1858</TD>
+    <TD>GLEAM J235701-344532</TD>
+    <TD>1</TD>
+    <TD>359.25279</TD>
+    <TD>0.49</TD>
+    <TD>-34.75881</TD>
+    <TD>0.6</TD>
+    <TD>double</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>&lt;</TD>
+    <TD>62.4</TD>
+    <TD>0.03241433726160606</TD>
+    <TD>0.002739390153234423</TD>
+    <TD>0.1704855516762056</TD>
+    <TD>9.0</TD>
+    <TD>4.586424169134258</TD>
+  </TR>
+  <TR>
+    <TD>G4Jy 1860</TD>
+    <TD>GLEAM J235708-181743</TD>
+    <TD>1</TD>
+    <TD>359.2825</TD>
+    <TD>0.43</TD>
+    <TD>-18.29506</TD>
+    <TD>0.6</TD>
+    <TD>single</TD>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>¿</TD>
+    <TD>60.7</TD>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD>NaN</TD>
+  </TR>
+</TABLEDATA>
+</DATA>
+</TABLE>
+</RESOURCE>
+</VOTABLE>
