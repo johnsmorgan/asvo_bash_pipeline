@@ -61,4 +61,3 @@ These are the external dependencies that are required to run this pipeline. For 
 ## Running the Pipeline
 Before running the pipeline, first make sure the text file obsids is populated with all observations that are to be processed with each on a new line. Then all that is required is to run ```pipeline_control.sh``` in ```pipeline_dir```.
 
-## Detailed script descriptions
