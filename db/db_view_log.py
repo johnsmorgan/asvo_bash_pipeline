@@ -1,6 +1,7 @@
 import os, datetime
 import sqlite3 as lite
 from optparse import OptionParser
+from dateutil.relativedelta import relativedelta
 
 # Initialise where database file is stored (in .bashrc)
 DB_FILE = os.environ['DB_FILE']
