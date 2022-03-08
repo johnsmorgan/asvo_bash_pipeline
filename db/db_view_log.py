@@ -37,8 +37,9 @@ elif opts.failed:
     query += ''' WHERE Status="Failed"'''
 elif opts.recent is not None:
     query += ''' WHERE Started > "%s"''' % str(datetime.datetime.now() - relativedelta(hours=opts.recent))
-elif not (opts.all or opts.unfinished or opts.recent or opts.processing or opts.failed):
-    query += ''' LIMIT %d OFFSET (SELECT COUNT(*) FROM Log) %d''' % (opts.number, -opts.number)
+
+if opts.number != 10:
+    query += ''' LIMIT %d''' % (opts.number)
 
 if opts.verbose:
     print(query)
