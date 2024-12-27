@@ -8,6 +8,8 @@ DB_dir=$3
 data_dir=$4
 garra_dir=$5
 
+if [ ! -d ${garra_dir}/currently_running ]; then mkdir ${garra_dir}/currently_running; fi
+
 if [ -z "$obsid" ] | [ -z "$asvo" ]; then
 	echo "ERROR Observation ID or ASVO Job ID were not passed correctly, job has not been submitted to SLURM scheduler"
 else
